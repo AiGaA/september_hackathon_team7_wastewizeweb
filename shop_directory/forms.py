@@ -2,7 +2,7 @@ from django import forms
 from .models import Shop
 
 
-class ShopForm(forms.ModelForm):
+class ShopForm(forms.ModelForm):        
     """
     Shop Form to add shop's details
     """
@@ -18,11 +18,11 @@ class ShopForm(forms.ModelForm):
         fields = ['shop_name', 'description', 'company_address', 'eircode', 'image', 'category', 'location']
 
         widgets = {
-            'shop_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'description': forms.Textarea(attrs={'class': 'form-control'}),
-            'company_address': forms.TextInput(attrs={'class': 'form-control'}),
-            'eircode': forms.TextInput(attrs={'class': 'form-control'}),
-            'image': forms.FileInput(attrs={'class': 'form-control'}),
+            'shop_name': forms.TextInput(),
+            'description': forms.Textarea(),
+            'company_address': forms.TextInput(),
+            'eircode': forms.TextInput(),
+            'image': forms.FileInput(),
         }
 
     def __init__(self, *args, **kwargs):
