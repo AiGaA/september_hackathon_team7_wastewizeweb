@@ -18,9 +18,9 @@ def add_shop(request):
         form = ShopForm(request.POST, request.FILES)
         # check whether it's valid:
         if form.is_valid():
-            shop = form.save(commit=False)
-            shop.username = request.user
-            form.save()
+            user = form.save(commit=False)
+            user.username = User.objects.get(username='admin')
+            user.save()
             messages.success(request, "Successfully added!")
             # redirect to a new URL:
             return redirect(reverse('home'))
